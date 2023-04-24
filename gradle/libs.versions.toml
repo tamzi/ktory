@@ -1,0 +1,22 @@
+[versions]
+kotlinVersion = "1.8.20"
+versionCatalogUpdateVersion = "0.8.0"
+versionUpdateVersion = "0.44.0"
+ktorVersion = "2.3.0"
+owaspDependencyCheckVersion = "8.0.0"
+
+[libraries]
+ktorCore = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktorVersion"}
+ktorAuth = { module = "io.ktor:ktor-server-auth-jvm", version.ref = "ktorVersion"}
+ktorNetty = { module = "io.ktor:ktor-server-netty-jvm", version.ref = "ktorVersion"}
+ktorTest = { module = "io.ktor:ktor-server-tests-jvm", version.ref = "ktorVersion"}
+kotlinJvmLib =  { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinVersion"}
+owaspDependencyLib = { module = "org.owasp:dependency-check-gradle", version.ref = "owaspDependencyCheckVersion"}
+ktorPluginLib = { module = "io.ktor.plugin:plugin", version.ref = "ktorVersion"}
+
+[plugins]
+catalogUpdate = { id = "nl.littlerobots.version-catalog-update", version.ref = "versionCatalogUpdateVersion" }
+versionUpdate = { id = "com.github.ben-manes.versions", version.ref = "versionUpdateVersion" }
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinVersion" }
+ktor = { id = "io.ktor.plugin", version.ref = "ktorVersion" }
+owaspDependencyCheck = { id = "org.owasp.dependencycheck", version.ref = "owaspDependencyCheckVersion" }
